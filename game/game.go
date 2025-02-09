@@ -17,6 +17,7 @@ func NewGame() *Game {
 
 // RESPONSAVEL POR ATUALIZAR A LOGICA DO JOGO
 func (g *Game) Update() error {
+	g.player.Update()
 	return nil
 }
 
@@ -26,6 +27,6 @@ func (g *Game) Draw(screen *ebiten.Image) {
 }
 
 // RESPONSAVEL POR RETORNAR O TAMANHO DA TELA
-func (g *Game) Layout(outsideWidth, outsideHeight int) (screenWidth, screenHeight int) {
-	return outsideWidth, outsideHeight
+func (g *Game) Layout(outsideWidth, outsideHeight int) (int, int) {
+	return screenWidth, screenHeight
 }
